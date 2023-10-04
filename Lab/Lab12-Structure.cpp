@@ -90,17 +90,69 @@
 #include <stdio.h>
 
 struct Student {
-        char Name[20] ;
-        char SueName[20] ;
+        char Name[50] ;
+        char LastName[50] ;
         int ID ;
         int ScoreSub1 ;
         int ScoreSub2 ;
         int ScoreSub3 ;
         int ScoreSub4 ;
-        int ScoreSub5 ; 
+        int ScoreSub5 ;
     } typedef S ;
 
-void getGrade( int score ) {
+void Grades( int score ) ;
+
+int main() {
+
+    printf( "\nStudent Details : \n" ) ;
+
+    S person[ 3 ] ;
+    for ( int i = 0 ; i < 3 ; i++ ) {
+        printf( "Student %d\n", i + 1 ) ;
+        printf( "Name & LastName : " ) ;
+        scanf( "%s %s", person[i].Name, person[i].LastName ) ; 
+
+        printf ( "Id : " ) ;
+        scanf( "%d", &person[i].ID ) ;
+
+        printf( "Scores in Subject 1: \n" ) ;
+        scanf( "%d", &person[i].ScoreSub1 ) ;
+
+        printf( "Scores in Subject 2: \n" ) ;
+        scanf( "%d", &person[i].ScoreSub2 ) ;
+
+        printf( "Scores in Subject 3: \n" ) ;
+        scanf( "%d", &person[i].ScoreSub3 ) ;
+
+        printf( "Scores in Subject 4: \n" ) ;
+        scanf( "%d", &person[i].ScoreSub4 ) ;
+
+        printf( "Scores in Subject 5: \n" ) ;
+        scanf( "%d", &person[i].ScoreSub5 ) ;
+
+    }//end for
+    
+
+    for ( int i = 0 ; i < 3 ; i++ ) {
+        printf( "\nStudent %d\n", i + 1 ) ;
+        printf( "Name & LastName : %s %s\n", person[i].Name, person[i].LastName ) ;
+        printf( "ID : %d\n", person[i].ID ) ;
+        printf( "Scores : %d %d %d %d %d\n", person[i].ScoreSub1, person[i].ScoreSub2, person[i].ScoreSub3, person[i].ScoreSub4, person[i].ScoreSub5 ) ;
+        printf( "Grades :" ) ;
+        Grades( person[i].ScoreSub1 ) ;
+        Grades( person[i].ScoreSub2 ) ;
+        Grades( person[i].ScoreSub3 ) ;
+        Grades( person[i].ScoreSub4 ) ;
+        Grades( person[i].ScoreSub5 ) ;
+        float Avg = person[i].ScoreSub1 + person[i].ScoreSub2 + person[i].ScoreSub3 + person[i].ScoreSub4 + person[i].ScoreSub5 ; 
+
+        printf( "\nAverage Scores : %.1f", Avg/5 ) ;
+    }//end for
+
+    return 0 ;
+}//end main function
+
+void Grades( int score ) {
     printf( " " ) ;
     if( score >= 80 ) printf( " A" ) ; 
     else if( score >= 75 && score < 80 ) printf( "B+" ) ; 
@@ -112,51 +164,3 @@ void getGrade( int score ) {
     else printf( " F" ) ;
 
 }//end void
-
-int main() {
-
-    S info[2]  = {0} ;
-    for ( int i = 0 ; i < 3 ; i++ ) {
-        printf( "Student %d\n" , i+1 ) ;
-        printf( "Name : " ) ;
-        scanf( "%s" , info[i].Name ) ; 
-
-        printf ( "Id : ") ;
-        scanf( "%d" , &info[i].ID ) ;
-
-        printf( "Scores in Subject 1: \n" ) ;
-        scanf( "%d" , &info[i].ScoreSub1 ) ;
-
-        printf( "Scores in Subject 2: \n" ) ;
-        scanf( "%d" , &info[i].ScoreSub2 ) ;
-
-        printf( "Scores in Subject 3: \n" ) ;
-        scanf( "%d" , &info[i].ScoreSub3 ) ;
-
-        printf( "Scores in Subject 4: \n" ) ;
-        scanf( "%d" , &info[i].ScoreSub4 ) ;
-
-        printf( "Scores in Subject 5: \n" ) ;
-        scanf( "%d" , &info[i].ScoreSub5 ) ;
-
-    }//end for
-    printf( "\nStudent Details : \n" ) ;
-
-    for ( int i = 0; i < 3; i++ ) {
-        printf( "\nStudent %d\n" , i+1 ) ;
-        printf( "Name : %s" , info[i].Name ) ;
-        printf( "ID : %d\n" , info[i].ID ) ;
-        printf( "Scores : %d %d %d %d %d\n" , info[i].ScoreSub1 , info[i].ScoreSub2 , info[i].ScoreSub3 , info[i].ScoreSub4 , info[i].ScoreSub5 ) ;
-        printf( "Grades :" ) ;
-        getGrade( info[i].ScoreSub1 ) ;
-        getGrade( info[i].ScoreSub2 ) ;
-        getGrade( info[i].ScoreSub3 ) ;
-        getGrade( info[i].ScoreSub4 ) ;
-        getGrade( info[i].ScoreSub5 ) ;
-        float Avg = info[i].ScoreSub1 + info[i].ScoreSub2 + info[i].ScoreSub3 + info[i].ScoreSub4 + info[i].ScoreSub5 ; 
-
-        printf( "\nAverage Scores : %.1f" , Avg/5 ) ;
-    }//end for
-
-    return 0  ;
-}//end main function
