@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/th331/github-classroom/engcc304/lab12-structure-natthakit111/Lab",
-      "program": "c:/Users/th331/github-classroom/engcc304/lab12-structure-natthakit111/Lab/build/Debug/outDebug",
+      "cwd": "c:/Users/th331/github-classroom/engcc304/lab12-structure-natthakit111",
+      "program": "c:/Users/th331/github-classroom/engcc304/lab12-structure-natthakit111/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

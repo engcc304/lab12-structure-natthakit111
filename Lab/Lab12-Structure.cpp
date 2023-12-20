@@ -100,7 +100,7 @@ struct Student {
         int ScoreSub5 ;
     } typedef S ;
 
-void Grades( int score ) ;
+void printGrades( int score ) ;
 
 int main() {
 
@@ -135,15 +135,15 @@ int main() {
 
     for ( int i = 0 ; i < 3 ; i++ ) {
         printf( "\nStudent %d\n", i + 1 ) ;
-        printf( "Name & LastName : %s %s\n", person[i].Name, person[i].LastName ) ;
+        printf( "Name & LastName %s %s\n", person[i].Name, person[i].LastName ) ;
         printf( "ID : %d\n", person[i].ID ) ;
-        printf( "Scores : %d %d %d %d %d\n", person[i].ScoreSub1, person[i].ScoreSub2, person[i].ScoreSub3, person[i].ScoreSub4, person[i].ScoreSub5 ) ;
-        printf( "Grades :" ) ;
-        Grades( person[i].ScoreSub1 ) ;
-        Grades( person[i].ScoreSub2 ) ;
-        Grades( person[i].ScoreSub3 ) ;
-        Grades( person[i].ScoreSub4 ) ;
-        Grades( person[i].ScoreSub5 ) ;
+        printf( "Scores : %7d %d %d %d %d\n", person[i].ScoreSub1, person[i].ScoreSub2, person[i].ScoreSub3, person[i].ScoreSub4, person[i].ScoreSub5 ) ;
+        printf( "printGrades :" ) ;
+        printGrades( person[i].ScoreSub1 ) ;
+        printGrades( person[i].ScoreSub2 ) ;
+        printGrades( person[i].ScoreSub3 ) ;
+        printGrades( person[i].ScoreSub4 ) ;
+        printGrades( person[i].ScoreSub5 ) ;
         float Avg = person[i].ScoreSub1 + person[i].ScoreSub2 + person[i].ScoreSub3 + person[i].ScoreSub4 + person[i].ScoreSub5 ; 
 
         printf( "\nAverage Scores : %.1f", Avg/5 ) ;
@@ -152,7 +152,7 @@ int main() {
     return 0 ;
 }//end main function
 
-void Grades( int score ) {
+void printGrades( int score ) {
     printf( " " ) ;
     if( score >= 80 ) printf( " A" ) ; 
     else if( score >= 75 && score < 80 ) printf( "B+" ) ; 
