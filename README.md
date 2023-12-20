@@ -44,3 +44,5 @@
 ### อื่นๆ
 * [ข้อมูลอาจารย์](https://lms.rmutl.ac.th/teachers/detail/24002453439513437/5fd51c39cb8f05637cb8e96df6ec9392edb3ec16ea62666620cda4fd8f8b3e72)
 * ติดติดอาจารย์ได้ตลอด ผ่าน Microsoft Team ได้ที่ mr.kittinan@rmutl.ac.th
+#   L a p - 2 . 1  
+ 
